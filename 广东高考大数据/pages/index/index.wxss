@@ -1,0 +1,136 @@
+/**index.wxss**/
+@import "../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+/* 整体 */
+.layer {
+  height: 750rpx;
+  width: 700rpx; 
+  position: relative;
+  margin: 0 auto;
+  margin-top : 30%;
+  margin-bottom: 20%;
+  border: 1px;
+  /* border-style: solid; */
+  border-radius: 7px;
+  /* border-color: #aaa; */
+  box-shadow: 1px 1px 5px #888888;
+  background-color: #fff;
+}
+
+/* 图片 */
+.img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  border: 1px;
+  flex-direction: row;
+  position: relative;
+  top: -50px;
+  left: 250rpx;
+  background: #aaa;
+  box-shadow: 1px 1px 10px #888888;
+}
+
+/* .fenlan {
+  border: 1px solid #000;
+  top: 70px;
+  margin-top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center
+} */
+
+.yuanxiao {
+  border: 1px solid #000;
+  font-size: small;
+}
+
+
+.fenshu1 {
+  display: inline-block;
+}
+.fenshu2 {
+  display: inline-block;
+}
+.fenshu3 {
+  display: inline-block;
+}
+
+
+.footer {
+   position: absolute;
+  left: 40%;
+  right: 40%;
+  bottom: 40rpx;  
+  text-align: center;
+  color: #464646;
+  font-size: small;
+  /* border: 1px solid #aaa; */
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar{  
+  flex: none;  
+  display: flex;
+  justify-content: center;
+  background: #fff;  
+  border: 1px #000;
+  
+}  
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx;  
+  top: -50px;
+}  
+.navbar .item.active{  
+  color: #57b197;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #57b197;  
+}  

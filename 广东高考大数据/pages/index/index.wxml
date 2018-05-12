@@ -1,0 +1,102 @@
+<!--index.wxml-->
+ <!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>  -->
+
+ <view class='layer'>
+  
+  <image class='img' src='image1.png' mode='aspextFill'></image>
+
+  <view class="navbar">  
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+  </view>  
+  
+<!--院校-->  
+  <view hidden="{{currentTab!==0}}">  
+    
+    <view class="itemView">用户名：
+      <input class="input" name="userName" placeholder="请输入用户名" bindinput="userNameInput"/>
+    </view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button> 
+  </view>  
+
+
+
+
+
+
+
+<!--分数段-->  
+  <view hidden="{{currentTab!==1}}" class=''>  
+    
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        查询年份：{{array[index]}}
+      </view>
+    </picker>
+
+  <view class='fenshuduan-fenshu'>
+    <view class='fenshu1'><input placeholder='低分' type='number' focus='true' class='yuanxiao'></input></view>
+    <view class='fenshu2'>至</view>
+    <view class='fenshu3'><input placeholder='满分' type='number' focus='true' class='yuanxiao'></input></view>
+  </view>
+
+
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+
+    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button> 
+  </view>  
+  
+<!--排名-->  
+  <view hidden="{{currentTab!==2}}">  
+
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        查询年份：{{array[index]}}
+      </view>
+    </picker>
+
+
+    <view class='fenshuduan-fenshu'>
+    <view class='fenshu1'><input placeholder='高位' type='number' focus='true' class='yuanxiao'></input></view>
+    <view class='fenshu2'>至</view>
+    <view class='fenshu3'><input placeholder='低位' type='number' focus='true' class='yuanxiao'></input></view>
+  </view>
+
+
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button>
+  </view>  
+
+  
+
+
+</view> 
+
+
+
+<view class='footer'>
+  ©广东高考
+</view>
