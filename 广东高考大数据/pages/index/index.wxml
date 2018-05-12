@@ -35,10 +35,7 @@
   </view>  
 
 
-
-
-
-
+<view></view>
 
 <!--分数段-->  
   <view hidden="{{currentTab!==1}}" class=''>  
