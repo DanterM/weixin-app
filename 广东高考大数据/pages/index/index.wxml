@@ -1,78 +1,73 @@
-<!--index.wxml-->
- <!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>  -->
-
  <view class='layer'>
   
   <image class='img' src='image1.png' mode='aspextFill'></image>
 
   <view class="navbar">  
     <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
-  </view>  
+  </view>
   
 <!--院校-->  
   <view hidden="{{currentTab!==0}}">  
     
-    <view class="itemView">用户名：
+    
+    <view >
+      <image class="image" src='学校.svg' style='height:30px;width:30px'></image>
       <input class="input" name="userName" placeholder="请输入用户名" bindinput="userNameInput"/>
     </view>
+
+
     <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio" wx:for="{{items}}">
         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
       </label>
     </radio-group>
-    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button> 
+
+
+     
   </view>  
 
+  <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="button">开始查询</button>
 
 <view></view>
 
 <!--分数段-->  
-  <view hidden="{{currentTab!==1}}" class=''>  
-    
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        查询年份：{{array[index]}}
-      </view>
-    </picker>
+  <view hidden="{{currentTab!==1}}">  
+    <image src='学校.svg' style='height:30px;width:30px'></image>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="yonghuming">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
 
   <view class='fenshuduan-fenshu'>
+    <image src='奖章.svg' style='height:30px;width:30px'></image>
     <view class='fenshu1'><input placeholder='低分' type='number' focus='true' class='yuanxiao'></input></view>
     <view class='fenshu2'>至</view>
     <view class='fenshu3'><input placeholder='满分' type='number' focus='true' class='yuanxiao'></input></view>
   </view>
 
 
-    <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio" wx:for="{{items}}">
-        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-      </label>
-    </radio-group>
+  <radio-group bindchange="radioChange" color="#57b197" class="radio">
+    <label wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
 
-    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button> 
+  <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button> 
   </view>  
   
 <!--排名-->  
   <view hidden="{{currentTab!==2}}">  
-
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <image src='日历.svg' style='height:25px;width:25px'></image>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="yonghuming">
       <view class="picker">
-        查询年份：{{array[index]}}
+        {{array[index]}}
       </view>
     </picker>
 
 
     <view class='fenshuduan-fenshu'>
+    <image src='奖杯.svg' style='height:30px;width:30px'></image>
     <view class='fenshu1'><input placeholder='高位' type='number' focus='true' class='yuanxiao'></input></view>
     <view class='fenshu2'>至</view>
     <view class='fenshu3'><input placeholder='低位' type='number' focus='true' class='yuanxiao'></input></view>
@@ -84,11 +79,8 @@
         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
       </label>
     </radio-group>
-    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit">开始查询</button>
+    <button style="opacity: {{opacity}};color: white; background-color: #57b197;" disabled="{{disabled}}" form-type="submit" class='submit'>开始查询</button>
   </view>  
-
-  
-
 
 </view> 
 

@@ -1,0 +1,14 @@
+<!--pages/schoolList/schoolList.wxml-->
+<view class='page'>
+  <view class='page_hd'>
+    <view class="weui-cells__title">学校结果列表</view>
+    <view class="weui-cells weui-cells_after-title">
+      <block wx:for="{{list}}">
+        <navigator url="../listResult/listResult?schoolName={{item.schoolName}}&subjectType={{subjectType}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{item.schoolName}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

@@ -66,10 +66,40 @@
   text-align: center
 } */
 
-.yuanxiao {
-  border: 1px solid #000;
-  font-size: small;
+.yonghuming {
+  display: inline-block;
+  /* width: 100%; */
+  border-bottom: 1px solid #57b197;
 }
+
+
+
+.image {
+  position: relative;
+  left: 20px
+}
+
+.input {
+  float: right;
+  width: 80%;
+  border-bottom: 1px solid #57b197;
+}
+
+
+
+.yuanxiao {
+  /* border: 1px solid #000; */
+  font-size: small;
+  border-bottom: 1px solid #57b197;
+}
+
+
+
+
+
+
+
+
 
 
 .fenshu1 {
@@ -80,6 +110,18 @@
 }
 .fenshu3 {
   display: inline-block;
+}
+
+.radio {
+  position: relative;
+  left: 30%;
+}
+
+.button {
+  position: relative;
+  bottom: 20%;
+  border: 1px solid #000;
+
 }
 
 

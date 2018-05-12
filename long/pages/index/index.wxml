@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='box'>
+    <view class='logo'>
+      <image class='logo-img' src='../../static/icon/logo.jpg'></image>
+    </view>
+    <view class='main-box'>
+      <view class='content-box'>
+        <view class="weui-tab">
+          <view class="weui-navbar">
+            <view id="0" class="weui-navbar__item {{activeIndex == 0 ? 'weui-bar__item_on' : ''}}" bindtap="bindTabClick">
+              <view class="weui-navbar__title">
+                <text class="iconfont icon-xuexiaogaikuang"></text>院校
+              </view>
+            </view>
+            <view id="1" class="weui-navbar__item {{activeIndex == 1 ? 'weui-bar__item_on' : ''}}" bindtap="bindTabClick">
+              <view class="weui-navbar__title">
+                <text class="iconfont icon-tongji"></text>分数段
+              </view>
+            </view>
+            <view id="2" class="weui-navbar__item {{activeIndex == 2 ? 'weui-bar__item_on' : ''}}" bindtap="bindTabClick">
+              <view class="weui-navbar__title">
+                <text class="iconfont icon-tubiao-"></text>排名
+              </view>
+            </view>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+          <view class="weui-tab__panel">
+            <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+              <view class='input-box'>
+                <text class='iconfont icon-52 theme-color' style='margin-right: 30px;'></text>
+                <input placeholder="输入院校名称" value='{{schoolName}}' bindinput='bindSchoolNameInput' placeholder-class='input-placeholder' bindconfirm='bindSubmit'/>
+              </view>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+              <view class='input-box'>
+                <text class='iconfont icon-rili theme-color' style='margin-right: 30px;'></text>
+                <picker class='picker-group' bindchange="bindPickerChange" value="{{yearIndex}}" range="{{yearArray}}">
+                  <view class="picker">
+                    <view class='{{ yearIndex > 0 ? "picker-selected" : "" }}' style="flex:1;font-size: 15px;">
+                      {{ yearArray[yearIndex] }}
+                    </view>
+                    <text class='iconfont icon-down theme-color' style='float: right;'></text>
+                  </view>
+                </picker>
+              </view>
+              <view class='input-box input-box-noline'>
+                <view class='input-box-item'>
+                  <text class='iconfont icon-decoration_icon theme-color' style='margin-right: 30px;'></text>
+                  <input placeholder="低分" value='{{ lowScore }}' bindinput='bindLowScoreInput' placeholder-class='input-placeholder' type='number' confirm-type='next'/>
+                </view>
+                <text style='margin: 0 20px;'>至</text>
+                <view class='input-box-item'>
+                  <input placeholder="高分" value='{{ highScore }}' bindinput='bindHighScoreInput' placeholder-class='input-placeholder' type='number' bindconfirm='bindSubmit'/>
+                </view>
+              </view>
+            </view>
+            <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+              <view class='input-box'>
+                <text class='iconfont icon-rili theme-color' style='margin-right: 30px;'></text>
+                <picker class='picker-group' bindchange="bindPickerChange" value="{{yearIndex}}" range="{{yearArray}}">
+                  <view class="picker">
+                    <view class='{{ yearIndex > 0 ? "picker-selected" : "" }}' style="flex:1;font-size: 15px;">
+                      {{ yearArray[yearIndex] }}
+                    </view>
+                    <text class='iconfont icon-down theme-color' style='float: right;'></text>
+                  </view>
+                </picker>
+              </view>
+              <view class='input-box input-box-noline'>
+                <view class='input-box-item'>
+                  <text class='iconfont icon-tubiao- theme-color' style='margin-right: 30px;'></text>
+                  <input placeholder="高位" value='{{ highLevel }}' bindinput='bindHighLevelInput' placeholder-class='input-placeholder' type='number' confirm-type='next'/>
+                </view>
+                <text style='margin: 0 20px;'>至</text>
+                <view class='input-box-item'>
+                  <input placeholder="低位" value='{{ lowLevel }}' bindinput='bindLowLevelInput' placeholder-class='input-placeholder' type='number' bindconfirm='bindSubmit'/>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='radio-box'>
+        <radio-group class="radio-group" bindchange="bindRadioChange">
+          <label class="radio">
+            <radio color='#f66' value="arts" checked="ture" />文科
+          </label>
+          <label class="radio">
+            <radio color='#f66' value="science" />理科
+          </label>
+        </radio-group>
+      </view>
+      <button class='btn-submit' bindtap='bindSubmit'>开始查询</button>
+    </view>
+  </view>
+  <text class='bottom-text'>©请关注山东高考在线</text>
+</view>

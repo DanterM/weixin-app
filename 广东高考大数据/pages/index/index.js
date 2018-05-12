@@ -14,25 +14,27 @@ Page({
       { name: 'wen', value: '文科', checked: 'true' },
       { name: 'li', value: '理科' },
     ],
-    array: ['美国', '中国', '巴西', '日本'],
+
+    array: ['2015', '2016', '2017', '2018'],
     objectArray: [
       {
         id: 0,
-        name: '美国'
+        name: '2015'
       },
       {
         id: 1,
-        name: '中国'
+        name: '2016'
       },
       {
         id: 2,
-        name: '巴西'
+        name: '2017'
       },
       {
         id: 3,
-        name: '日本'
+        name: '2018'
       }
     ],
+    index: 0,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -51,9 +53,9 @@ Page({
     })
   },
 
-  // radioChange: function (e) {
-  //   console.log('radio发生change事件，携带value值为：', e.detail.value)
-  // }
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
 
 
   bindPickerChange: function (e) {

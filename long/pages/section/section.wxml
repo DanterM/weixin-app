@@ -1,0 +1,29 @@
+<!--pages/section/section.wxml-->
+<view class='page'>
+  <view class='title'>
+    <block wx:if="{{activeIndex === 1}}">
+      <text>{{year}}年 | {{subjectType === 'arts' ? '文科' : '理科'}} | {{lowScore}}-{{highScore}}分</text>
+    </block>
+    <block wx:if="{{activeIndex === 2}}">
+      <text>{{year}}年 | {{subjectType === 'arts' ? '文科' : '理科'}} | {{lowLevel}}-{{highLevel}}名</text>
+    </block>
+  </view>
+  <view class='list-box'>
+    <view class='list-title'>
+      <text style='flex:2;'>学校</text>
+      <text>投档线</text>
+      <text>省排名</text>
+      <text>批次</text>
+      <text>备注</text>
+    </view>
+    <block wx:for="{{list}}">
+      <view class='list-item'>
+        <text style='flex:2;'>{{item.schoolName}}</text>
+        <text>{{item.lowScore === null ? '-' : item.lowScore}}</text>
+        <text>{{item.lowLevel === null ? '-' : item.lowLevel}}</text>
+        <text>{{item.batch === null ? '-' : item.batch}}</text>
+        <text>{{item.remarks === null ? '-' : item.remarks}}</text>
+      </view>
+    </block>
+  </view>
+</view>

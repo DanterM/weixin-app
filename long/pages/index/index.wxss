@@ -1,0 +1,197 @@
+/**index.wxss**/
+
+.box {
+  width: 100%;
+  min-height: 200px;
+  position: relative;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-left: calc(50% - 45px);
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-shadow: 0 5px 15px -2px rgba(255, 102, 102, 0.5);
+}
+
+.logo-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.main-box {
+  min-height: 300px;
+  margin-top: 45px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 35px 10px 20px 10px;
+  box-shadow: 0 5px 20px 0 rgba(196, 196, 196, 0.5);
+}
+
+.bottom-text {
+  font-size: 0.8rem;
+  color: #a1a1a1;
+  position: fixed;
+  bottom: 20px;
+}
+
+/* radio-box */
+
+.radio-box {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.radio {
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+/* radio未选中时样式 */
+
+radio .wx-radio-input {
+  border-radius: 3px;
+  height: 28rpx;
+  width: 28rpx;
+  margin-top: -4rpx;
+  /* 自定义样式.... */
+  border: 1px #f66 solid;
+}
+
+/* radio选中时样式 */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  background-color: #f66;
+  border: 1px solid #f66;
+  /* 自定义样式.... */
+}
+
+/* button */
+
+.btn-submit {
+  background-color: #f66;
+  color: #fff;
+}
+
+/* input-box */
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 8px;
+  border-bottom: 1px #dfdfdf solid;
+  margin: 20px 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.input-box-noline {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.input-placeholder {
+  font-size: 14px;
+  color: #dfdfdf;
+}
+
+.input-box-item {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 8px;
+  border-bottom: 1px #dfdfdf solid;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1
+}
+.picker-group {
+  width: 100%;
+}
+.picker {
+  width: 100%;
+  display: flex;
+  font-size: 15px;
+  color: #dfdfdf;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.picker-selected {
+  color: #1f1f1f;
+}
+
+/* navbar */
+
+.weui-navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  /* border-bottom: 1rpx solid #ccc; */
+}
+
+.weui-navbar__item {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: #f66;
+}
+
+.weui-navbar__slider {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 6.5em;
+  height: 5rpx;
+  background-color: #f66;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.weui-navbar__title {
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.weui-tab {
+  position: relative;
+  height: 100%;
+}
+
+.weui-tab__panel {
+  box-sizing: border-box;
+  height: 100%;
+  /* min-height: 150px; */
+  padding-top: 50px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@import "../../static/iconfont/iconfont.wxss";
