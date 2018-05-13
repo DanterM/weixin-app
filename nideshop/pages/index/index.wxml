@@ -1,6 +1,9 @@
-
+<!-- 首页 -->
 <!--index.wxml-->
 <view class="container">
+
+
+  <!-- 滑块视图容器 -->
   <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
       <navigator url="{{item.link}}">
@@ -10,13 +13,16 @@
   </swiper>
 
 
-  
+  <!-- 菜单 -->
   <view class="m-menu">
     <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
       <image src="{{item.icon_url}}" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>
   </view>
+
+
+  <!-- 品牌 -->
   <view class="a-section a-brand">
     <view class="h">
       <navigator url="../brand/brand">
@@ -38,6 +44,9 @@
       </view>
     </view>
   </view>
+
+
+  <!-- 新品首发 -->
   <view class="a-section a-new" wx:if="{{newGoods.length > 0}}">
     <view class="h">
       <view>
@@ -56,6 +65,9 @@
       </view>
     </view>
   </view>
+
+
+  <!-- 人气推荐 -->
   <view class="a-section a-popular" wx:if="{{hotGoods.length > 0}}">
     <view class="h">
       <view>
@@ -79,6 +91,9 @@
       </view>
     </view>
   </view>
+
+
+  <!-- 专题精选 -->
   <view class="a-section a-topic" wx:if="topics.length > 0">
     <view class="h">
       <view>
@@ -102,6 +117,9 @@
       </scroll-view>
     </view>
   </view>
+
+
+
   <view class="good-grid" wx:for="{{floorGoods}}" wx:key="{{item.id}}">
     <view class="h">
       <view>
