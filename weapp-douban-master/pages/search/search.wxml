@@ -1,3 +1,4 @@
+<!-- 搜索 -->
 <import src="../common/movie-list"/>
 <view class="container">
   <view class="header">
